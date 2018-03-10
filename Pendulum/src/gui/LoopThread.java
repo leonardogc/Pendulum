@@ -39,6 +39,8 @@ public class LoopThread extends Thread{
 	            if(g.playing){
 	            	g.p.update(1/max_fps);
 	            	
+	            	g.repaint();
+	            	
 	            	if(counter==0) {
 	            		g.p2.update(1/max_fps);
 	            		//counter++;
@@ -61,8 +63,11 @@ public class LoopThread extends Thread{
 	            	}
 
 	            }
+	            else {
+	            	g.repaint();
+	            }
 	            
-	            g.repaint();
+	            
 
 	            frameDuration=System.nanoTime()-startTime;
 	            waitTime=targetTime-frameDuration;
